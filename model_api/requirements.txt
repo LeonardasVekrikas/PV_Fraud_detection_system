@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+pydantic
+shap
+lime
+tensorflow
+lightgbm
+sqlalchemy
+streamlit
+requests
+pandas
+scikit-learn
+joblib
+openai>=1.0.0
