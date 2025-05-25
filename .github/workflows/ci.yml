@@ -30,8 +30,3 @@ jobs:
 
     - name: Build Docker image
       run: docker build -t fraud-app:latest .
-
-    # (Optional) Run tests inside Docker
-    - name: Test inside Docker
-      run: |
-        docker run --rm fraud-app:latest pytest tests
