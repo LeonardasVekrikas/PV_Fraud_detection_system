@@ -4,11 +4,14 @@ import os
 # --- Force project root onto sys.path as the first import location ---
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+from unittest.mock import patch, MagicMock
+
+# --- Patch Keras load_model BEFORE importing the app (this is CRITICAL!) ---
+with patch("tensorflow.keras.models.load_model", return_value=MagicMock()):
+    from model_api.main import app
+
 import pytest
 from fastapi.testclient import TestClient
-from unittest.mock import patch
-
-from model_api.main import app
 
 client = TestClient(app)
 
