@@ -12,3 +12,4 @@ pandas
 scikit-learn
 joblib
 openai>=1.0.0
+imbalanced-learn
