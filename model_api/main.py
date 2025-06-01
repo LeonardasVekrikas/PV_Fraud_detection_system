@@ -30,7 +30,7 @@ def retrain_periodically():
     while periodic_retraining["enabled"]:
         try:
             print("[INFO] Periodic retraining started")
-            df = pd.read_csv("data/creditcard.csv")
+            df = pd.read_csv("data/creditcard.csv") #creditcard file
             train_lightgbm_balanced(df)
             train_lstm_balanced(df.drop(columns=['Class']), df['Class'])
             print("[INFO] Periodic retraining completed")
@@ -40,7 +40,7 @@ def retrain_periodically():
 
 @app.get("/logs/training")
 def get_training_logs():
-    log_path = "results/training_logs.csv"
+    log_path = "results/training_logs.csv" #training logs file
     try:
         if os.path.exists(log_path):
             df = pd.read_csv(log_path)
