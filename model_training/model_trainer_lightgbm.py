@@ -13,6 +13,7 @@ from sklearn.metrics import (
     accuracy_score, recall_score, precision_score, f1_score
 )
 
+# patobulintas lightgbm treniravimas
 def train_lightgbm_balanced(df, target_column='Class', model_path='models/lightgbm_model.pkl'):
     print("[INFO] Splitting normal and fraud classes...")
     df_fraud = df[df[target_column] == 1].copy()
