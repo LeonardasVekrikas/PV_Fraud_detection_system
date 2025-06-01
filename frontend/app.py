@@ -16,7 +16,7 @@ if 'OPENAI_API_KEY' in st.secrets:
     client = OpenAI(api_key=st.secrets['OPENAI_API_KEY'])
 
 st.set_page_config(page_title="AI Fraud Detection", layout="wide")
-# Sidebar Navigation
+# Sidebar Navigation setup
 page = st.sidebar.radio("🧭 Navigate", ["🧪 Manual Prediction", "🔍 Fraud Detection", "📈 Model Metrics", "📝 SAR Report"])
 
 def format_time_ago(ts_unix):
